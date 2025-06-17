@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useMemo } from 'react'
 import LoadingThreeDotsPulse from './components/Loader'
 import { GoogleGenAI } from "@google/genai";
-import { Dropdown, DropdownItem, createTheme, ThemeProvider, theme } from "flowbite-react";
+import { Dropdown, DropdownItem, ThemeProvider} from "flowbite-react";
 import { BackgroundLines } from './components/BackgroundLines';
 import { Link } from 'react-router-dom';
 import Switcher11 from './components/Switcher';
@@ -84,8 +84,6 @@ const Quiz = ({ file, quiz, setQuiz, isChecked, setIsChecked}: QuizProps) => {
   - Do not include any explanation, extra text, or notes outside of the JSON.
   - Only return valid JSON as described above.
   `.trim();
-
-  let array: number[] = [];
   const [week,setWeek] = useState(0);
   const weekList = useMemo(() => {
   if (!quiz) return [];

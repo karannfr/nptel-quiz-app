@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import React, { useEffect } from "react";
+import React from "react";
 import { RxCross1 } from "react-icons/rx";
 
 interface ToastProps {
