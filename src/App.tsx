@@ -15,13 +15,13 @@ export type QuestionType = {
 function App() {
   const [isChecked, setIsChecked] = useState(false)
   const [file, setFile] = useState< File | null> (null);
-  const [quiz,setQuiz] = useState <Record<string,QuestionType> | null> (null);
+  const [quiz,setQuiz] = useState <Record<string,QuestionType[]> | null> (null);
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route element={<RootLayout/>}>
-        <Route index element={<Home file={file} setFile={setFile}/>}/>
+        <Route index element={<Home file={file} setFile={setFile} setQuiz={setQuiz}/>}/>
         <Route path='/quiz' element={<Quiz file={file} quiz={quiz} setQuiz={setQuiz} isChecked={isChecked} setIsChecked={setIsChecked}/>}/>
-        <Route path='/quiz/:id' element={<QuizWeek isChecked={isChecked} setIsChecked={setIsChecked} quiz={quiz}/>}/>
+        <Route path='/quiz/:id' element={<QuizWeek isChecked={isChecked} quiz={quiz}/>}/>
       </Route>
     )
   )

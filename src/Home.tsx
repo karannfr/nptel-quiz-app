@@ -1,13 +1,16 @@
 import { BackgroundLines } from "./components/BackgroundLines" 
 import { Link } from "react-router-dom";
 import React from "react";
+import type { QuestionType } from "./App";
+import wildlife from './data/wildlife.json';
 
 type HomeProps = {
   file: File | null;
   setFile: React.Dispatch<React.SetStateAction<File | null>>;
+  setQuiz: React.Dispatch<React.SetStateAction<Record<string, QuestionType[]> | null>>
 }
 
-const Home: React.FC<HomeProps> = ({file,setFile}) => {
+const Home: React.FC<HomeProps> = ({file,setFile, setQuiz}) => {
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
   const file = event.target.files?.[0];
   if (file) {
@@ -58,6 +61,7 @@ const Home: React.FC<HomeProps> = ({file,setFile}) => {
             Generate Quiz
           </Link>
         </button>}
+        <button className="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 z-50 cursor-pointer" onClick={() => setQuiz(wildlife as Record<string, QuestionType[]>)}><Link to="/quiz">wildlife</Link></button>
       </BackgroundLines>
     </div>
   )

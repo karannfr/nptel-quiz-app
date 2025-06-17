@@ -89,7 +89,7 @@ const Quiz = ({ file, quiz, setQuiz, isChecked, setIsChecked}: QuizProps) => {
   const [week,setWeek] = useState(0);
   const weekList = useMemo(() => {
   if (!quiz) return [];
-  return Object.keys(quiz); // ["Week 1", "Week 2", ..., "Week 13"]
+  return Object.keys(quiz);
   }, [quiz]);
   const customTheme = {
     dropdown: {
@@ -126,7 +126,7 @@ const Quiz = ({ file, quiz, setQuiz, isChecked, setIsChecked}: QuizProps) => {
       inlineWrapper: "flex"
     }
   };
-  const ai = new GoogleGenAI({ apiKey: "AIzaSyC7zCYWtkjb96YfCZob_nxr6q2LVuJoj30" }); // Replace with your API key
+  const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
   useEffect(() => {
     const generateQuiz = async () => {
       if (!file) return;
