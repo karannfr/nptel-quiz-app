@@ -53,6 +53,7 @@ const Quiz = ({ file, quiz, setQuiz, isChecked, setIsChecked, setName, name, wee
   - The "answer" value must exactly match the bolded option.
   - Do not include any explanation, extra text, or notes outside of the JSON.
   - Only return valid JSON as described above.
+  - If you feel the pdf content is not correct return a respsone with a message saying "Please upload a valid document".
   `.trim();
   const secondHalfPrompt = `
   You are given a course quiz PDF document that contains multiple-choice quiz questions organized week-wise. Each section begins with a heading such as “Week 1”, “Week 2”, and so on.
@@ -87,9 +88,11 @@ const Quiz = ({ file, quiz, setQuiz, isChecked, setIsChecked, setName, name, wee
   - The "answer" value must exactly match the bolded option.
   - Do not include any explanation, extra text, or notes outside of the JSON.
   - Only return valid JSON as described above.
+  - If you feel the pdf content is not correct return a respsone with a message saying "Please upload a valid document".
   `.trim();
   const [week,setWeek] = useState <string|null> (null);
   const [isLoading, setIsLoading] = useState(false);
+  const [invalid, setInvalid] = useState(false);
   const customTheme = {
     dropdown: {
       arrowIcon: "ml-2 h-4 w-4",
@@ -149,7 +152,15 @@ const Quiz = ({ file, quiz, setQuiz, isChecked, setIsChecked, setName, name, wee
             contents,
           });
           const result = await response.text;
-          first = first + (result as string).substring(7,(result as string).length-6) + ',';
+          const trimmedResult = (result as string).trim();
+          if (trimmedResult.includes("Please upload a valid document")) {
+            setInvalid(true);
+            setIsLoading(false);
+            return;
+          } else {
+            setInvalid(false);
+          }
+          first = first + trimmedResult.substring(7, trimmedResult.length - 6) + ',';
         } catch (err) {
           console.error("Error calling Gemini:", err);
         }
@@ -160,8 +171,15 @@ const Quiz = ({ file, quiz, setQuiz, isChecked, setIsChecked, setName, name, wee
             contents,
           });
           const result = await response.text;
-          first = first + (result as string).substring(9,(result as string).length-3);
-          console.log(first);
+          const trimmedResult = (result as string).trim();
+          if (trimmedResult.includes("Please upload a valid document")) {
+            setInvalid(true);
+            setIsLoading(false);
+            return;
+          } else {
+            setInvalid(false);
+          }
+          first = first + trimmedResult.substring(9, trimmedResult.length - 3);
           setQuiz(JSON.parse(first));
           sessionStorage.setItem("quiz", first);
           sessionStorage.setItem("name" , name as string);
@@ -200,6 +218,15 @@ const Quiz = ({ file, quiz, setQuiz, isChecked, setIsChecked, setName, name, wee
       <LoadingThreeDotsPulse/>
       <SplashCursor/>
     </div> 
+    :
+    invalid ? 
+    <div className='flex h-[800px] flex-col justify-center items-center'>
+      <div  className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-md md:text-xl    lg:text-2xl font-sans py-2 md:py-10 relative z-9999 font-bold tracking-tight">Invalid Document 
+        <br />Please Try Again
+      </div>
+      <Link to='/' className=" cursor-pointer focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 my-8 z-9999">Back to homepage</Link>
+      <SplashCursor/>
+    </div>
     :
     <>
     <BackgroundLines className='absolute'/>

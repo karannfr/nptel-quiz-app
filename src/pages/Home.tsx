@@ -60,7 +60,7 @@ const [message,setErrorMessage] = useState< string|null >(null);
                     <p className="mb-2 text-sm text-[#b19eef]"><span className="font-semibold">Click to upload</span> or drag and drop</p>
                     <p className="text-xs text-[#b19eef]">PDF, TXT</p>
                     {file ? <p className="text-lg text-green-300 mt-6">{file.name}</p> : '' }
-                    <input id="dropzone-file" type="file" className="text-[#b19eef] w-1/2 hidden" accept=".pdf,.txt" onChange={handleFileChange}/>
+                    <input id="dropzone-file" type="file" className="text-[#b19eef] w-1/2 hidden" accept=".pdf" onChange={handleFileChange}/>
                 </div>
             </label>
         </div> 
