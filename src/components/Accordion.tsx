@@ -36,7 +36,7 @@ const faqList = [
 
 const Accordion = () => {
   return (
-    <div className="z-9999 text-white w-full max-w-6xl flex flex-col gap-8 xl:mx-auto lg:mx-24 md:mx-16 mx-8 items-center my-32">
+    <div className="z-50 text-white w-full max-w-6xl flex flex-col gap-8 xl:mx-auto lg:mx-24 md:mx-16 mx-8 items-center my-32">
       <h1 className="font-bold text-3xl text-center">Frequently Asked Questions</h1>
       {faqList.map((faq, index) => (
         <FAQ key={index} question={faq.question} answer={faq.answer} />
