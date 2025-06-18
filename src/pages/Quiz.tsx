@@ -200,6 +200,7 @@ const Quiz = ({ file, quiz, setQuiz, isChecked, setIsChecked, setName, name, wee
       sessionStorage.setItem("quiz", JSON.stringify(quiz));
       sessionStorage.setItem("name" , name as string);
     }
+    window.scrollTo(0, 0)
   }, [file, setQuiz]);
 
   const handleDropdown = (week: string) => {

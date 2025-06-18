@@ -49,10 +49,10 @@ const QuizWeek = ({ isChecked, quiz, setQuiz, setName, name, weekList }: QuizWee
       const weekKey = `Week ${id}`;
       setQuestions(quiz[weekKey] || null);
     }
-
     setCount(0);
     setScore(0);
     setReveal(isChecked);
+    window.scrollTo(0, 0)
   }, [id, quiz]);
 
   return (
