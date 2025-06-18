@@ -1,10 +1,84 @@
 <!doctype html>
 <html lang="en" class="h-screen m-0">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NPTEL Quiz</title>
-  </head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <title>Quiztelify | Generate NPTEL Quizzes Instantly</title>
+  <meta name="description" content="Quiztelify helps you generate NPTEL quizzes from PDFs or choose from preloaded weekly quizzes. Practice and test modes included. Free, fast, and simple.">
+
+  <link rel="canonical" href="https://nptel-quiz-app-kappa.vercel.app/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nptel-quiz-app-kappa.vercel.app/" />
+  <meta property="og:title" content="Quiztelify | Generate NPTEL Quizzes Instantly" />
+  <meta property="og:description" content="Generate quizzes from PDFs or use curated NPTEL quizzes. Practice or test mode. Ideal for students." />
+  <meta property="og:image" content="https://nptel-quiz-app-kappa.vercel.app/Opengraph.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://nptel-quiz-app-kappa.vercel.app/" />
+  <meta name="twitter:title" content="Quiztelify | Generate NPTEL Quizzes Instantly" />
+  <meta name="twitter:description" content="Generate and attempt NPTEL quizzes with ease. PDF parser + curated sets." />
+  <meta name="twitter:image" content="https://nptel-quiz-app-kappa.vercel.app/Opengraph.png" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the purpose of the NPTEL Quiz website?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The website allows students to access, attempt, and review quizzes from various NPTEL courses in an interactive format."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are the quizzes official NPTEL content?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, the questions are sourced directly from NPTEL courses but reformatted for better accessibility and engagement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I track my progress on different quizzes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Currently, progress tracking is local to your session. We are working on persistent user profiles in upcoming updates."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the website free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely! This platform is completely free and open to all learners."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are there solutions or explanations provided?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, after submitting a quiz, you will receive correct answers along with brief explanations for better understanding."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often are new quizzes added?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We update the quiz bank weekly with new courses and questions as they become available from NPTEL."
+      }
+    }
+  ]
+}
+</script>
+</head>
   <body class="min-h-screen w-screen bg-[#060010] overflow-x-hidden overflow-y-auto m-0">
     <div id="root" class="w-screen h-full min-h-screen"></div>
     <script type="module" src="/src/main.tsx"></script>
