@@ -1,8 +1,11 @@
-import { BackgroundLines } from "../components/BackgroundLines" 
+import { BackgroundLines } from "../components/BackgroundLines";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import type { QuestionType } from "../App";
 import wildlife from '../data/wildlife.json';
+import forest from '../data/forest.json';
+import economics from '../data/economics.json'
+import geography from '../data/geography.json'
 import SpotlightCard from "../components/SpotlightCard";
 import Accordion from "../components/Accordion";
 import Toast from "../components/Toast";
@@ -78,27 +81,79 @@ const [message,setErrorMessage] = useState< string|null >(null);
           </Link>
         </button>}
         <p className="text-lg text-white font-bold font-sans mt-8">Popular Courses</p>
-        <div className="flex flex-wrap gap-7 w-56 sm:w-124 md:w-186 lg:w-256 xl:w-308 justify-start mt-8">
-          {[...Array(5)].map((_, index) => (
+        <div className="flex flex-wrap gap-7 w-64 sm:w-136 md:w-136 lg:w-206 xl:w-280 justify-start mt-8">
             <Link
               to="/quiz"
-              key={index}
+              key={0}
               onClick={() => {
-                setName("Wildlife Ecology");
+                setName("Wild Life Ecology, IIT Kanpur");
                 setQuiz(wildlife as Record<string, QuestionType[]>);
               }}
             >
               <SpotlightCard className="text-white cursor-pointer">
                 <div className="flex flex-col justify-between h-full">
-                  <h3>WildLife Ecology</h3>
+                  <h3>Wild Life Ecology, IIT Kanpur</h3>
                   <div>
-                    <p>Year: 2025</p>
-                    <p>Biomedical</p>
+                    <p>Year: 2024</p>
+                    <p>Prof. Mainak Das, Dr. Ankur Awadhiya</p>
                   </div>
                 </div>
               </SpotlightCard>
             </Link>
-          ))}
+            <Link
+              to="/quiz"
+              key={1}
+              onClick={() => {
+                setName("Forests and their Management, IIT Kanpur");
+                setQuiz(forest as Record<string, QuestionType[]>);
+              }}
+            >
+              <SpotlightCard className="text-white cursor-pointer">
+                <div className="flex flex-col justify-between h-full">
+                  <h3>Forests and their Management, IIT Kanpur</h3>
+                  <div>
+                    <p>Year: 2025</p>
+                    <p>Prof. Ankur Awadhiya</p>
+                  </div>
+                </div>
+              </SpotlightCard>
+            </Link>
+            <Link
+              to="/quiz"
+              key={2}
+              onClick={() => {
+                setName("Conservation Economics, IIT Kanpur");
+                setQuiz(economics as Record<string, QuestionType[]>);
+              }}
+            >
+              <SpotlightCard className="text-white cursor-pointer">
+                <div className="flex flex-col justify-between h-full">
+                  <h3>Conservation Economics, IIT Kanpur</h3>
+                  <div>
+                    <p>Year: 2025</p>
+                    <p>Dr. Ankur Awadhiya</p>
+                  </div>
+                </div>
+              </SpotlightCard>
+            </Link>
+            <Link
+              to="/quiz"
+              key={3}
+              onClick={() => {
+                setName("Conservation Geography, IIT Kanpur");
+                setQuiz(geography as Record<string, QuestionType[]>);
+              }}
+            >
+              <SpotlightCard className="text-white cursor-pointer">
+                <div className="flex flex-col justify-between h-full">
+                  <h3>Conservation Geography, IIT Kanpur</h3>
+                  <div>
+                    <p>Year: 2024</p>
+                    <p>Dr. Ankur Awadhiya</p>
+                  </div>
+                </div>
+              </SpotlightCard>
+            </Link>
         </div>
         {message && <Toast setErrorMessage={setErrorMessage} message={message}/>}
         <Accordion/>
