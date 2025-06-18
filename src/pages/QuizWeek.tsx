@@ -93,6 +93,7 @@ const QuizWeek = ({ isChecked, quiz, setQuiz, setName, name, weekList }: QuizWee
         length={questions?.length}
         score={score}
         id={id}
+        weeklist={weekList}
       />
     </div>
   );

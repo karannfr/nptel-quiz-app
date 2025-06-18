@@ -8,9 +8,10 @@ type SpringModalProps = {
   score: number;
   length: number | undefined;
   id: string | undefined;
+  weeklist: string[]
 };
 
-const SpringModal = ({ isOpen, setIsOpen, score, length, id }: SpringModalProps) => {
+const SpringModal = ({ isOpen, setIsOpen, score, length, id, weeklist }: SpringModalProps) => {
   const isPerfect = score === length;
 
   return (
@@ -49,7 +50,7 @@ const SpringModal = ({ isOpen, setIsOpen, score, length, id }: SpringModalProps)
                   Review Quiz
                 </button>
                   <Link
-                    to={`/quiz/${Number(id) + 1}`}
+                    to={ id=='all' ? '/quiz/1' : id == String(weeklist.length) ? '/quiz/all' : `/quiz/${Number(id) + 1}`}
                     onClick={() => setIsOpen(false)}
                     className="bg-white hover:opacity-90 transition-opacity text-indigo-600 font-semibold w-full py-2 rounded text-center"
                   >
