@@ -2,36 +2,37 @@ import FAQ from "./FAQ";
 
 const faqList = [
   {
-    question: "What is the purpose of the NPTEL Quiz website?",
+    question: "How can I practice quizzes for NPTEL courses?",
     answer:
-      "The website allows students to access, attempt, and review quizzes from various NPTEL courses in an interactive format.",
+      "You can upload NPTEL course PDFs or choose from a selection of weekly quizzes. Both practice and test modes are available."
   },
   {
-    question: "Are the quizzes official NPTEL content?",
+    question: "Are the quizzes based on real NPTEL course content?",
     answer:
-      "Yes, the questions are sourced directly from NPTEL courses but reformatted for better accessibility and engagement.",
+      "Yes, the quizzes are generated from official NPTEL course material and reformatted for easier practice."
   },
   {
-    question: "Can I track my progress on different quizzes?",
+    question: "Can I upload my own NPTEL PDFs to generate quizzes?",
     answer:
-      "Currently, progress tracking is local to your session. We are working on persistent user profiles in upcoming updates.",
+      "Yes, uploading your own course PDFs allows the platform to parse and generate interactive quizzes from them."
   },
   {
-    question: "Is the website free to use?",
+    question: "Is my quiz progress saved?",
     answer:
-      "Absolutely! This platform is completely free and open to all learners.",
+      "Progress is stored locally during your session. Support for user accounts and saved history is planned in future updates."
   },
   {
-    question: "Are there solutions or explanations provided?",
+    question: "Are answers or explanations shown after submitting a quiz?",
     answer:
-      "Yes, after submitting a quiz, you will receive correct answers along with brief explanations for better understanding.",
+      "No, the platform only reveals whether your selected answers are correct. Detailed solutions are not currently provided."
   },
   {
-    question: "How often are new quizzes added?",
+    question: "How often are quizzes updated?",
     answer:
-      "We update the quiz bank weekly with new courses and questions as they become available from NPTEL.",
-  },
+      "New quizzes and course material are added regularly, typically every week, based on the latest NPTEL content."
+  }
 ];
+
 
 const Accordion = () => {
   return (
