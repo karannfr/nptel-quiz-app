@@ -19,7 +19,7 @@ const Navbar = () => {
           <RxCross1 className="sm:hidden"/> {/* Moved RxCross1 inside the click handler div */}
           <NavLink to="/">Home</NavLink>
           <NavLink to="/about">About</NavLink>
-          <NavLink to="/contact">Contact Us</NavLink>
+          {/* <NavLink to="/contact">Contact Us</NavLink> */}
           <a href="https://buymeacoffee.com/karan27">Buy me a coffee ☕</a>
         </div>
       }
@@ -40,14 +40,14 @@ const Navbar = () => {
         >
           Home
         </NavLink>
-        <NavLink
+        {/* <NavLink
           to="/contact"
           className={({ isActive }) =>
             `rounded cursor-pointer pl-3 pr-3 pt-1 pb-1 ${isActive ? 'bg-[#b19eef3f] text-[#b19eef]' : 'hover:bg-[#b19eef] hover:text-black'}`
           }
         >
           Contact Us
-        </NavLink>
+        </NavLink> */}
         <NavLink
           to="/about"
           className={({ isActive }) =>
