@@ -1,6 +1,6 @@
 import { BackgroundLines } from "../components/BackgroundLines";
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import type { QuestionType } from "../App";
 import wildlife from '../data/wildlife.json';
 import forest from '../data/forest.json';
@@ -18,6 +18,9 @@ type HomeProps = {
 }
 
 const Home: React.FC<HomeProps> = ({file,setFile, setQuiz, setName}) => {
+  useEffect(() => {
+    window.scroll(0,0);
+  },[])
 const [message,setErrorMessage] = useState< string|null >(null);
  const triggerToast = (msg: string) => { 
     setErrorMessage(null);
