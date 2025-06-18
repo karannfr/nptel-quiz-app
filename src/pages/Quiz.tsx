@@ -229,7 +229,7 @@ const Quiz = ({ file, quiz, setQuiz, isChecked, setIsChecked, setName, name, wee
           Your Personalized NPTEL  <br /> Quiz Companion
         </h2>
         <p className="max-w-xl mx-auto text-sm md:text-lg text-neutral-700 dark:text-neutral-400 text-center">
-          Upload your course PDFs or choose from our pre-loaded NPTEL courses. Practice and test yourself week-wise — in Practice Mode with instant feedback or Test Mode htmlFor real exam experience.
+          Upload your course PDFs or choose from our pre-loaded NPTEL courses. Practise and test yourself week-wise — in Practise Mode with instant feedback or Test Mode htmlFor real exam experience.
         </p>
         <p className='text-white mt-8 max-w-xl mx-auto text-center'><span className='font-bold'>Note:</span> Please verify the quiz name displayed below, should be same as Uploaded File Name/ Course Name If you notice any discrepancies, kindly return to the home page and navigate back to this page.</p>
         <p className="max-w-xl mx-auto text-xl md:text-2xl text-purple-700 text-center mt-8 font-bold">
