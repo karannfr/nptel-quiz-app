@@ -1,13 +1,15 @@
 import { NavLink } from "react-router-dom"
 import { RxCross1, RxHamburgerMenu } from "react-icons/rx";
 import { useState } from "react";
-
+import StarBorder from "./StarBorder";
 
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   return (
     <nav className="flex flex-row justify-between items-center text-lg text-white max-w-6xl mx-auto sticky sm:top-8 z-[9999] px-8 rounded-4xl sm:border border-[#392e4e] sm:bg-black/50 shadow-lg ring-1 ring-black/5 backdrop-blur-sm py-4">
       <NavLink to='/'><div className="dm-sans-bold text-2xl cursor-pointer"><span className="text-purple-500">Quiz</span>telify</div></NavLink>
+      <div className="not-sm:hidden">
+      </div>
       {!isNavOpen && <div className="sm:hidden" onClick={() => setIsNavOpen((prev) => !prev)}>
         <RxHamburgerMenu/>
       </div>}
@@ -18,9 +20,18 @@ const Navbar = () => {
           <NavLink to="/">Home</NavLink>
           <NavLink to="/about">About</NavLink>
           <NavLink to="/contact">Contact Us</NavLink>
+          <a href="https://buymeacoffee.com/karan27">Buy me a coffee ☕</a>
         </div>
       }
-      <div className="flex flex-row gap-4.5 dm-sans-semibold not-sm:hidden">
+      <div className="flex flex-row gap-4.5 dm-sans-semibold not-sm:hidden items-center">
+        <StarBorder
+            as="button"
+            className="not-sm:hidden"
+            color="magenta"
+            speed="5s"
+          >
+            Buy me a coffee ☕
+          </StarBorder>
         <NavLink
           to="/"
           className={({ isActive }) =>
