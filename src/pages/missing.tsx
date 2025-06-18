@@ -1,7 +1,11 @@
 import { BackgroundLines } from "../components/BackgroundLines"
 import { Link } from "react-router-dom"
 import SplashCursor from "../components/SplashCursor"
+import { useEffect } from "react"
 const Missing = () => {
+  useEffect(() => {
+  window.scrollTo(0, 0)
+  }, [])
   return (
     <div className="flex flex-col justify-start items-center min-h-screen pt-48">
       <SplashCursor/>
