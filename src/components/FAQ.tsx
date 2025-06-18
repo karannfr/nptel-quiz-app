@@ -27,9 +27,9 @@ const FAQ = ({ question, answer }: FAQProps) => {
           {question}
         </p>
         {isOpen ? (
-          <FaChevronUp className='not-md: text-2xl fill-purple-600' onClick={() => setIsOpen(prev => !prev)} />
+          <FaChevronUp className='cursor-pointer not-md: text-2xl fill-purple-600' onClick={() => setIsOpen(prev => !prev)} />
         ) : (
-          <FaChevronDown className='not-md: text-2xl' onClick={() => setIsOpen(prev => !prev)} />
+          <FaChevronDown className='cursor-pointer not-md: text-2xl' onClick={() => setIsOpen(prev => !prev)} />
         )}
       </div>
       <div
