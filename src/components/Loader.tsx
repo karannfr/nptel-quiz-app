@@ -18,7 +18,7 @@ function LoadingThreeDotsPulse() {
         <motion.div
             animate="pulse"
             transition={{ staggerChildren: -0.2, staggerDirection: -1 }}
-            className="container lg:ml-48 md:ml-24"
+            className="container"
         >
             <motion.div className="dot" variants={dotVariants as Variants} />
             <motion.div className="dot" variants={dotVariants as Variants} />

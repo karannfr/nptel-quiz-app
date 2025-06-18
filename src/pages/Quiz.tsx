@@ -92,7 +92,6 @@ const Quiz = ({ file, quiz, setQuiz, isChecked, setIsChecked, setName, name, wee
   `.trim();
   const [week,setWeek] = useState <string|null> (null);
   const [isLoading, setIsLoading] = useState(false);
-  const [invalid, setInvalid] = useState(false);
   const customTheme = {
     dropdown: {
       arrowIcon: "ml-2 h-4 w-4",
@@ -154,11 +153,8 @@ const Quiz = ({ file, quiz, setQuiz, isChecked, setIsChecked, setName, name, wee
           const result = await response.text;
           const trimmedResult = (result as string).trim();
           if (trimmedResult.includes("Please upload a valid document")) {
-            setInvalid(true);
             setIsLoading(false);
             return;
-          } else {
-            setInvalid(false);
           }
           first = first + trimmedResult.substring(7, trimmedResult.length - 6) + ',';
         } catch (err) {
@@ -173,11 +169,8 @@ const Quiz = ({ file, quiz, setQuiz, isChecked, setIsChecked, setName, name, wee
           const result = await response.text;
           const trimmedResult = (result as string).trim();
           if (trimmedResult.includes("Please upload a valid document")) {
-            setInvalid(true);
             setIsLoading(false);
             return;
-          } else {
-            setInvalid(false);
           }
           first = first + trimmedResult.substring(9, trimmedResult.length - 3);
           setQuiz(JSON.parse(first));
@@ -212,7 +205,7 @@ const Quiz = ({ file, quiz, setQuiz, isChecked, setIsChecked, setName, name, wee
   
   return (
     isLoading ? 
-    <div className='flex h-[800px] flex-col justify-center'>
+    <div className='flex h-[800px] flex-col justify-center items-center'>
       <div  className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-md md:text-xl    lg:text-2xl font-sans py-2 md:py-10 relative z-9999 font-bold tracking-tight">Generating your quiz... 
         <br />Just a moment while we prepare your questions.
       </div>
@@ -220,7 +213,7 @@ const Quiz = ({ file, quiz, setQuiz, isChecked, setIsChecked, setName, name, wee
       <SplashCursor/>
     </div> 
     :
-    invalid ? 
+    !quiz ? 
     <div className='flex h-[800px] flex-col justify-center items-center'>
       <div  className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-md md:text-xl    lg:text-2xl font-sans py-2 md:py-10 relative z-9999 font-bold tracking-tight">Invalid Document 
         <br />Please Try Again
