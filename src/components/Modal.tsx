@@ -53,7 +53,7 @@ const SpringModal = ({ isOpen, setIsOpen, score, length, id }: SpringModalProps)
                     onClick={() => setIsOpen(false)}
                     className="bg-white hover:opacity-90 transition-opacity text-indigo-600 font-semibold w-full py-2 rounded text-center"
                   >
-                    Next Quiz
+                    Next Week
                   </Link>
                 <Link
                   to="/quiz"

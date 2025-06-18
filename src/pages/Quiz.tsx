@@ -1,11 +1,12 @@
-import React, { useEffect, useState, useMemo } from 'react'
-import LoadingThreeDotsPulse from './components/Loader'
+import React, { useEffect, useState } from 'react'
+import LoadingThreeDotsPulse from '../components/Loader'
 import { GoogleGenAI } from "@google/genai";
 import { Dropdown, DropdownItem, ThemeProvider} from "flowbite-react";
-import { BackgroundLines } from './components/BackgroundLines';
+import { BackgroundLines } from '../components/BackgroundLines';
 import { Link } from 'react-router-dom';
-import Switcher11 from './components/Switcher';
-import type { QuestionType } from './App';
+import Switcher11 from '../components/Switcher';
+import type { QuestionType } from '../App';
+import SplashCursor from '../components/SplashCursor';
 
 type QuizProps = {
   isChecked: boolean;
@@ -13,9 +14,12 @@ type QuizProps = {
   file: File | null;
   quiz: Record<string, QuestionType[]> | null;
   setQuiz : React.Dispatch<React.SetStateAction<Record<string, QuestionType[]> | null>>
+  name: string|null
+  setName : React.Dispatch<React.SetStateAction<string | null>>
+  weekList: string[];
 }
 
-const Quiz = ({ file, quiz, setQuiz, isChecked, setIsChecked}: QuizProps) => {
+const Quiz = ({ file, quiz, setQuiz, isChecked, setIsChecked, setName, name, weekList}: QuizProps) => {
   const firstHalfPrompt = `
   You are given a course quiz PDF document that contains multiple-choice quiz questions organized week-wise. Each section starts with a heading such as “Week 1”, “Week 2”, and so on.
 
@@ -84,11 +88,8 @@ const Quiz = ({ file, quiz, setQuiz, isChecked, setIsChecked}: QuizProps) => {
   - Do not include any explanation, extra text, or notes outside of the JSON.
   - Only return valid JSON as described above.
   `.trim();
-  const [week,setWeek] = useState(0);
-  const weekList = useMemo(() => {
-  if (!quiz) return [];
-  return Object.keys(quiz);
-  }, [quiz]);
+  const [week,setWeek] = useState <string|null> (null);
+  const [isLoading, setIsLoading] = useState(false);
   const customTheme = {
     dropdown: {
       arrowIcon: "ml-2 h-4 w-4",
@@ -119,7 +120,7 @@ const Quiz = ({ file, quiz, setQuiz, isChecked, setIsChecked}: QuizProps) => {
           light: "border border-gray-200 bg-white text-gray-900",
           auto: "border border-gray-200 bg-white text-gray-900 dark:border-none dark:bg-gray-700 dark:text-white"
         },
-        target: "w-36 flex justify-between"
+        target: "w-38 flex justify-between"
       },
       inlineWrapper: "flex"
     }
@@ -130,6 +131,7 @@ const Quiz = ({ file, quiz, setQuiz, isChecked, setIsChecked}: QuizProps) => {
       if (!file) return;
       const reader = new FileReader();
       reader.onload = async () => {
+        setIsLoading(true);
         const base64Data = (reader.result as string).split(',')[1];
         const contents = [
           { text: firstHalfPrompt },
@@ -154,51 +156,73 @@ const Quiz = ({ file, quiz, setQuiz, isChecked, setIsChecked}: QuizProps) => {
         contents[0].text=secondHalfPrompt;
         try {
           const response = await ai.models.generateContent({
-            model: "gemini-2.0-flash",
+            model: "gemini-2.5-flash",
             contents,
           });
           const result = await response.text;
           first = first + (result as string).substring(9,(result as string).length-3);
           console.log(first);
           setQuiz(JSON.parse(first));
+          sessionStorage.setItem("quiz", first);
+          sessionStorage.setItem("name" , name as string);
         } catch (err) {
           console.error("Error calling Gemini:", err);
+        } finally{
+          setIsLoading(false);
         }
       };
       reader.readAsDataURL(file);
     };
     generateQuiz();
+    if(!file && !quiz){
+      setQuiz(JSON.parse((sessionStorage.getItem("quiz")) as string));
+      setName(sessionStorage.getItem("name"));
+    }
+    if(!file && quiz){
+      sessionStorage.setItem("quiz", JSON.stringify(quiz));
+      sessionStorage.setItem("name" , name as string);
+    }
   }, [file, setQuiz]);
 
   const handleDropdown = (week: string) => {
-      const select = document.querySelector('#«r1»');
-      if(select)
-        if(week!=='Week 13')
-          select.innerHTML = 'Week' + ' '+ week.substring(4) + '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" stroke="currentColor" stroke-width="0" viewBox="0 0 20 20" class="ml-2 h-4 w-4"><path fill-rule="evenodd" stroke="none" d="M5.293 7.293a1 1 0 0 1 1.414 0L10 10.586l3.293-3.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414z" clip-rule="evenodd"></path></svg>';
+        if(week!=='all')
+          setWeek(week.substring(5));
         else
-          select.innerHTML = 'All Weeks' + '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" stroke="currentColor" stroke-width="0" viewBox="0 0 20 20" class="ml-2 h-4 w-4"><path fill-rule="evenodd" stroke="none" d="M5.293 7.293a1 1 0 0 1 1.414 0L10 10.586l3.293-3.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414z" clip-rule="evenodd"></path></svg>';
-      setWeek(Number(week.substring(5)));
+          setWeek(week);
   }
   
   return (
-    !quiz ? <LoadingThreeDotsPulse/> :
-     <div className="h-full">
-      <BackgroundLines className="flex items-center justify-center w-full flex-col px-4">
-        <h2 className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-2xl md:text-4xl lg:text-7xl font-sans py-2 md:py-10 mt-32 md:mt-[-256px] relative z-20 font-bold tracking-tight ">
+    isLoading ? 
+    <div className='flex h-[800px] flex-col justify-center'>
+      <div  className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-md md:text-xl    lg:text-2xl font-sans py-2 md:py-10 relative z-9999 font-bold tracking-tight">Generating your quiz... 
+        <br />Just a moment while we prepare your questions.
+      </div>
+      <LoadingThreeDotsPulse/>
+      <SplashCursor/>
+    </div> 
+    :
+    <>
+    <BackgroundLines className='absolute'/>
+     <div className="flex items-center justify-start w-full flex-col px-4 min-h-screen py-32">
+        <h2 className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-2xl md:text-4xl lg:text-7xl font-sans py-2 md:py-10 relative z-20 font-bold tracking-tight">
           Your Personalized NPTEL  <br /> Quiz Companion
         </h2>
         <p className="max-w-xl mx-auto text-sm md:text-lg text-neutral-700 dark:text-neutral-400 text-center">
           Upload your course PDFs or choose from our pre-loaded NPTEL courses. Practice and test yourself week-wise — in Practice Mode with instant feedback or Test Mode htmlFor real exam experience.
         </p>
+        <p className='text-white mt-8 max-w-xl mx-auto text-center'><span className='font-bold'>Note:</span> Please verify the quiz name displayed below, should be same as Uploaded File Name/ Course Name If you notice any discrepancies, kindly return to the home page and navigate back to this page.</p>
+        <p className="max-w-xl mx-auto text-xl md:text-2xl text-purple-700 text-center mt-8 font-bold">
+          {name}
+        </p>
         <div className='mt-8 flex justify-center gap-6 items-center'>
           <ThemeProvider theme={customTheme}>
-            <Dropdown label="Select Week" dismissOnClick={false}>
+            <Dropdown label={week ? week === 'all' ? "All Weeks" : `Week ${week}` : "Select Week"} dismissOnClick={false} id='dropdown' >
               {weekList.map((weekKey, index) => (
                   <DropdownItem key={index} onClick={() => handleDropdown(weekKey)}>
                     {weekKey}
                   </DropdownItem>
                 ))}
-              <DropdownItem onClick={() => handleDropdown(`Week ${weekList.length + 1}`)}>All Weeks</DropdownItem>
+              <DropdownItem onClick={() => handleDropdown('all')}>All Weeks</DropdownItem>
             </Dropdown>
           </ThemeProvider>
           {!week ? <button
@@ -206,7 +230,7 @@ const Quiz = ({ file, quiz, setQuiz, isChecked, setIsChecked}: QuizProps) => {
             className="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5  dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 disabled:opacity-50 disabled:cursor-not-allowed z-30 cursor-pointer"
             disabled={!week}
           >
-            Generate Quiz
+            Start Quiz
           </button> : 
             <button
             type="button"
@@ -219,9 +243,8 @@ const Quiz = ({ file, quiz, setQuiz, isChecked, setIsChecked}: QuizProps) => {
           </button>}
           </div>
           <Switcher11 isChecked={isChecked} setIsChecked={setIsChecked}/>
-      </BackgroundLines>
     </div>
-    
+    </>
   );
 };
 

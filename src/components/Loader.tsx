@@ -37,7 +37,7 @@ function StyleSheet() {
             {`
             .container {
                 width: 100vw;
-                height: 100vh;
+                height: fit-content;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -48,7 +48,7 @@ function StyleSheet() {
                 width: 20px;
                 height: 20px;
                 border-radius: 50%;
-                background-color: #ff0088;
+                background-color: #7e3af2;
                 will-change: transform;
             }
             `}

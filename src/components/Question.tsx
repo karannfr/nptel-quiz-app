@@ -5,7 +5,7 @@ type QuestionProps = {
   options: string[];
   answer: string;
   mode: boolean;
-  key: number;
+  key: string;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   setCount: React.Dispatch<React.SetStateAction<number>>;
   setScore: React.Dispatch<React.SetStateAction<number>>;

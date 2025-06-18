@@ -6,26 +6,45 @@ import { useState } from "react";
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   return (
-    <nav className="flex flex-row justify-between text-lg text-white  rounded-2xl p-4 pl-6 pr-6 items-center z-20 fixed w-9/10 left-7 lg:left-24 md:left-18 sm:left-15 2xl:left-28">
-      <div className="dm-sans-bold text-2xl">Quizify</div>
+    <nav className="flex flex-row justify-between items-center text-lg text-white max-w-6xl mx-auto sticky sm:top-8 z-[9999] px-8 rounded-4xl sm:border border-[#392e4e] sm:bg-[#1E1E3F20] shadow-lg ring-1 ring-black/5 py-4">
+      <NavLink to='/'><div className="dm-sans-bold text-2xl cursor-pointer"><span className="text-purple-500">Quiz</span>telify</div></NavLink>
       {!isNavOpen && <div className="sm:hidden" onClick={() => setIsNavOpen((prev) => !prev)}>
         <RxHamburgerMenu/>
       </div>}
       {
         isNavOpen &&
-        <div className="{isNavOpen ? '' : hidden}" onClick={() => setIsNavOpen((prev) => !prev)}>
-          <RxCross1/>
-          <div className="fixed right-8 flex flex-col gap-4 items-end top-20">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/about">About</NavLink>
-            <NavLink to="/contact">Contact Us</NavLink>
-          </div>
+        <div className="fixed right-0 flex flex-col gap-4 items-end top-20 bg-[#060010] sm:hidden z-[9999] w-screen h-screen pr-6 -mt-4" onClick={() => setIsNavOpen((prev) => !prev)}>
+          <RxCross1 className="sm:hidden"/> {/* Moved RxCross1 inside the click handler div */}
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/about">About</NavLink>
+          <NavLink to="/contact">Contact Us</NavLink>
         </div>
       }
-      <div className="flex flex-row gap-4.5 dm=sans-semibold not-sm:hidden">
-        <NavLink to="/"><div className="{({isAvtive}) => isActive ? bg-[#b19eef3f] text-[#b19eef]: ''} rounded cursor-pointer hover:bg-[#b19eef3f] hover:text-[#b19eef] pl-3 pr-3 pt-1 pb-1">Home</div></NavLink>
-        <NavLink to="/contact"><div className="rounded cursor-pointer hover:bg-[#b19eef3f] hover:text-[#b19eef] pl-3 pr-3 pt-1 pb-1">Contact Us</div></NavLink>
-        <NavLink to="/about"><div className="rounded cursor-pointer hover:bg-[#b19eef3f] hover:text-[#b19eef] pl-3 pr-3 pt-1 pb-1">About</div></NavLink>
+      <div className="flex flex-row gap-4.5 dm-sans-semibold not-sm:hidden">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            `rounded cursor-pointer pl-3 pr-3 pt-1 pb-1 ${isActive ? 'bg-[#b19eef3f] text-[#b19eef]' : 'hover:bg-[#b19eef] hover:text-black'}`
+          }
+        >
+          Home
+        </NavLink>
+        <NavLink
+          to="/contact"
+          className={({ isActive }) =>
+            `rounded cursor-pointer pl-3 pr-3 pt-1 pb-1 ${isActive ? 'bg-[#b19eef3f] text-[#b19eef]' : 'hover:bg-[#b19eef] hover:text-black'}`
+          }
+        >
+          Contact Us
+        </NavLink>
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            `rounded cursor-pointer pl-3 pr-3 pt-1 pb-1 ${isActive ? 'bg-[#b19eef3f] text-[#b19eef]' : 'hover:bg-[#b19eef] hover:text-black'}`
+          }
+        >
+          About
+        </NavLink>
       </div>
     </nav>
   )
