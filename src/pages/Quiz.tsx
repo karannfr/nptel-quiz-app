@@ -206,7 +206,7 @@ const Quiz = ({ file, quiz, setQuiz, isChecked, setIsChecked, setName, name, wee
   return (
     isLoading ? 
     <div className='flex h-[800px] flex-col justify-center items-center'>
-      <div  className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-md md:text-xl    lg:text-2xl font-sans py-2 md:py-10 relative z-9999 font-bold tracking-tight">Generating your quiz... 
+      <div  className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-md md:text-xl    lg:text-2xl font-sans py-2 md:py-10 relative z-50 font-bold tracking-tight">Generating your quiz... 
         <br />Just a moment while we prepare your questions.
       </div>
       <LoadingThreeDotsPulse/>
@@ -215,10 +215,10 @@ const Quiz = ({ file, quiz, setQuiz, isChecked, setIsChecked, setName, name, wee
     :
     !quiz ? 
     <div className='flex h-[800px] flex-col justify-center items-center'>
-      <div  className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-md md:text-xl    lg:text-2xl font-sans py-2 md:py-10 relative z-9999 font-bold tracking-tight">Invalid Document 
+      <div  className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-md md:text-xl    lg:text-2xl font-sans py-2 md:py-10 relative z-50 font-bold tracking-tight">Invalid Document 
         <br />Please Try Again
       </div>
-      <Link to='/' className=" cursor-pointer focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 my-8 z-9999">Back to homepage</Link>
+      <Link to='/' className=" cursor-pointer focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 my-8 z-50">Back to homepage</Link>
       <SplashCursor/>
     </div>
     :

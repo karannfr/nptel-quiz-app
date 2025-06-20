@@ -5,6 +5,7 @@ import Question from '../components/Question';
 import SpringModal from '../components/Modal';
 import { Link } from 'react-router-dom';
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
+import Missing from './missing';
 
 type QuizWeekProps = {
   isChecked: boolean;
@@ -21,13 +22,14 @@ const submitQuiz = (setReveal: React.Dispatch<React.SetStateAction<boolean>>, se
   setIsOpen(true);
 }
 
-const QuizWeek = ({ isChecked, quiz, setQuiz, setName, name, weekList }: QuizWeekProps) => {
+const QuizWeek = ({ isChecked, quiz, setQuiz, setName, name, weekList}: QuizWeekProps) => {
   const { id } = useParams();
   const [questions, setQuestions] = useState<QuestionType[] | null>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [count,setCount] = useState(0);
   const [score,setScore] = useState(0);
   const [reveal, setReveal] = useState(isChecked);
+  const [missingPage, setMissingPage] = useState(false);
   useEffect(() => {
     if (!quiz) {
       const storedQuiz = sessionStorage.getItem("quiz");
@@ -53,9 +55,14 @@ const QuizWeek = ({ isChecked, quiz, setQuiz, setName, name, weekList }: QuizWee
     setScore(0);
     setReveal(isChecked);
     window.scrollTo(0, 0)
+    if(id != 'all'){
+      if(Number(id) > Number(weekList[weekList.length-1].substring(5)))
+        setMissingPage(true);
+    }
   }, [id, quiz]);
 
   return (
+    missingPage ? <Missing/> :
     !quiz  ? <div className="h-screen text-amber-50 flex flex-col items-center justify-center mx-auto w-max-4xl text-2xl">
       No Quiz Data Found Please Go Back to Home and Upload a File or Choose a Course
     </div>: 

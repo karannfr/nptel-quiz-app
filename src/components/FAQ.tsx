@@ -22,14 +22,14 @@ const FAQ = ({ question, answer }: FAQProps) => {
 
   return (
     <div className='w-72 md:w-128 lg:w-5xl border-b border-purple-600/40 flex flex-col justify-start pt-8 pb-4'>
-      <div className='flex flex-row justify-between items-center w-72 md:w-128 lg:w-5xl'>
+      <div className='group flex flex-row justify-between items-center w-72 md:w-128 lg:w-5xl cursor-pointer' onClick={() => setIsOpen(prev => !prev)}>
         <p className='font-small text-xs md:text-md lg:text-lg lg:font-semibold mr-6'>
           {question}
         </p>
         {isOpen ? (
-          <FaChevronUp className='cursor-pointer not-md: text-2xl fill-purple-600' onClick={() => setIsOpen(prev => !prev)} />
+          <FaChevronUp className='cursor-pointer not-md: text-2xl fill-purple-600'/>
         ) : (
-          <FaChevronDown className='cursor-pointer not-md: text-2xl' onClick={() => setIsOpen(prev => !prev)} />
+          <FaChevronDown className='cursor-pointer not-md: text-2xl'/>
         )}
       </div>
       <div
