@@ -54,12 +54,12 @@ const Question = ({ question, answer, options, mode, setIsOpen, setCount, count,
             <button
               key={index}
               onClick={() => handleClick(item)}
-              className={`flex items-center justify-center min-w-[200px] h-[100px] flex-[1_0_calc(50%-24px)] px-6 py-4 border border-black/10 rounded-lg shadow-lg text-center  cursor-pointer transition-all duration-200 ease-in-out text-black
+              className={`flex items-center justify-center min-w-[200px] min-h-[100px] flex-[1_0_calc(50%-24px)] px-6 py-4 border border-black/10 rounded-lg shadow-lg text-center  cursor-pointer transition-all duration-200 ease-in-out text-black
                 hover:scale-105
                 ${!reveal ? answered ? answered==answer ? answer==item ? 'bg-green-500' : 'bg-white' : answered == item ? 'bg-red-500' : answer==item ?  'bg-green-500' : 'bg-white' : 'bg-white' : answered ? answered==item ? ' bg-purple-400' : 'bg-white' : 'bg-white'}
                 disabled:cursor-not-allowed 
                 disabled:pointer-events-none
-                text-xl
+                text-lg
                 font-medium
               `}
               disabled={!!answered && !mode}
