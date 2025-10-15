@@ -18,10 +18,10 @@
         "Higher reproductive rate means higher fitness.",
         "Fitness should be measured across several generations."
       ],
-      "answer": "Fitness is species-specific."
+      "answer": "Higher reproductive rate means higher fitness."
     },
     {
-      "question": "Ecology is the scientific study of ____________ that determine the distribution and abundance of organisms. (Fill in the blanks)",
+      "question": "Ecology is the scientific study of that determine the distribution and abundance of organisms. (Fill in the blanks)",
       "options": [
         "statics",
         "interactions",
@@ -91,7 +91,7 @@
       "answer": "Humboldt"
     },
     {
-      "question": "Ecology is the scientific study of interactions among organisms and their __________. (Fill in the blanks)",
+      "question": "Ecology is the scientific study of interactions among organisms and their (Fill in the blanks)",
       "options": [
         "habitat",
         "niche",
@@ -113,7 +113,7 @@
       "answer": "stable"
     },
     {
-      "question": "The mitochondrion is a / an",
+      "question": "The mitochondrion is a/an",
       "options": [
         "Sub-cellular organelle",
         "Cell",
@@ -155,28 +155,28 @@
     {
       "question": "\"the diversity that exists within an ecosystem\" is",
       "options": [
-        "alpha (α) biodiversity",
-        "beta (β) biodiversity",
-        "gamma (γ) biodiversity",
-        "delta (δ) biodiversity"
+        "alpha (a) biodiversity",
+        "beta ( ) biodiversity",
+        "gamma (y) biodiversity",
+        "delta (6) biodiversity"
       ],
-      "answer": "alpha (α) biodiversity"
+      "answer": "alpha (a) biodiversity"
     },
     {
       "question": "\"the diversity that exists among different geographies\" is",
       "options": [
-        "alpha (α) biodiversity",
-        "beta (β) biodiversity",
-        "gamma (γ) biodiversity",
-        "delta (δ) biodiversity"
+        "alpha (a) biodiversity",
+        "beta ( ) biodiversity",
+        "gamma (y) biodiversity",
+        "delta (6) biodiversity"
       ],
-      "answer": "gamma (γ) biodiversity"
+      "answer": "gamma (y) biodiversity"
     },
     {
       "question": "The emergent principle can be stated as",
       "options": [
         "Whole sum of parts",
-        "Whole = sum of parts",
+        "Whole sum of parts",
         "Whole > sum of parts",
         "None of these"
       ],
@@ -208,8 +208,8 @@
       "question": "Egrets with buffaloes are an example of",
       "options": [
         "colony",
-        "commensalism",
         "protocooperation",
+        "commensalism",
         "allelopathy"
       ],
       "answer": "commensalism"
@@ -242,7 +242,7 @@
         "both participants are benefitted",
         "both participants are unharmed"
       ],
-      "answer": "both participants are benefited"
+      "answer": "both participants are benefitted"
     },
     {
       "question": "I observe a bird take a tick out of another bird's head and eat it. In the social context, this behaviour would be called",
@@ -297,7 +297,7 @@
     {
       "question": "Hamilton's rule can be stated as",
       "options": [
-        "$rR<C$",
+        "$rB<C$",
         "$rB>C$",
         "$rB=C$",
         "$rB+C=0$"
@@ -317,14 +317,14 @@
       "answer": "10% rule"
     },
     {
-      "question": "Trees → Birds → Parasites → Hyperparasites represents",
+      "question": "Trees Birds Parasites Hyperparasites represents",
       "options": [
         "upright pyramid of numbers",
         "inverted pyramid of numbers",
         "spindle pyramid of numbers",
         "dumb-bell pyramid of numbers"
       ],
-      "answer": "inverted pyramid of numbers"
+      "answer": "spindle pyramid of numbers"
     },
     {
       "question": "Net primary productivity is given by",
@@ -347,7 +347,7 @@
       "answer": "photosynthesis = respiration"
     },
     {
-      "question": "Consider the food chain: Grass → Grasshopper → Frog → Snake → Hawk. As we move up the food chain,",
+      "question": "Consider the food chain: Grass Grasshopper Frog Snake Hawk. As we move up the food chain,",
       "options": [
         "available energy decreases",
         "available energy increases",
@@ -357,7 +357,7 @@
       "answer": "available energy decreases"
     },
     {
-      "question": "Consider the food chain: Grass → Grasshopper → Frog → Snake → Hawk. In this food chain, more number of hawks than grasshoppers can be supported",
+      "question": "Consider the food chain: Grass Grasshopper Frog Snake Hawk. In this food chain,",
       "options": [
         "more number of hawks than grasshoppers can be supported",
         "more number of grasshoppers than hawks can be supported",
@@ -367,7 +367,7 @@
       "answer": "more number of grasshoppers than hawks can be supported"
     },
     {
-      "question": "Tree → Frugivorous birds → Hawk represents",
+      "question": "Tree Frugivorous birds Hawk represents",
       "options": [
         "upright pyramid of numbers",
         "inverted pyramid of numbers",
@@ -377,7 +377,7 @@
       "answer": "spindle pyramid of numbers"
     },
     {
-      "question": "Consider the food chain: Grass → Grasshopper → Frog → Snake → Hawk. In this food chain,",
+      "question": "Consider the food chain: Grass Grasshopper Frog Snake Hawk. In this food chain,",
       "options": [
         "hawk is producer",
         "hawk is consumer and carnivore",
@@ -397,7 +397,7 @@
       "answer": "oligotrophic lakes"
     },
     {
-      "question": "Consider the food chain: Grass → Grasshopper → Frog → Snake → Hawk. In this food chain,",
+      "question": "Consider the food chain: Grass Grasshopper Frog Snake Hawk. In this food chain,",
       "options": [
         "frog is producer",
         "frog is consumer and carnivore",
@@ -429,7 +429,7 @@
       "answer": "pollinator insects"
     },
     {
-      "question": "____________ employs a simple rule of selecting every kth unit starting with a number chosen at random from 1 to k as the random start.",
+      "question": "employs a simple rule of selecting every kth unit starting with a number chosen at random from 1 to k as the random start.",
       "options": [
         "Simple random sampling",
         "Systematic sampling",
@@ -499,7 +499,7 @@
       "answer": "Physiological longevity > Ecological longevity"
     },
     {
-      "question": "____________ is how close the measured values are to the correct value.",
+      "question": "is how close the measured values are to the correct value.",
       "options": [
         "Accuracy",
         "Precision",
@@ -528,7 +528,7 @@
         "selective species",
         "exclusive species"
       ],
-      "answer": "indifferent species"
+      "answer": "selective species"
     },
     {
       "question": "When compared to generalist species, specialist species have",
@@ -564,11 +564,11 @@
       "question": "Which of these is correct?",
       "options": [
         "Fundamental niche > Realised niche",
-        "Fundamental niche = Realised niche",
+        "Fundamental niche Realised niche",
         "Fundamental niche < Realised niche",
         "a or b"
       ],
-      "answer": "Fundamental niche > Realised niche"
+      "answer": "a or b"
     },
     {
       "question": "Importance value varies from",
@@ -603,12 +603,12 @@
     {
       "question": "Which of these depicts correctly the lithosere primary succession?",
       "options": [
-        "Rock → Crustose lichen → Foliose lichen → Moss stage → Herbaceous → Shrub → Woodland → Climax",
-        "Rock → Foliose lichen → Crustose lichen → Moss → Herbaceous stage → Shrub → Woodland → Climax",
-        "Moss → Crustose lichen → Foliose lichen → Rock → Herbaceous stage → Shrub → Woodland → Climax",
-        "Rock → Crustose lichen → Foliose lichen → Shrub → Herbaceous stage → Moss → Woodland → Climax"
+        "Rock Crustose lichen Foliose lichen → Moss Herbaceous stage Shrub Woodland → Climax",
+        "Rock Foliose lichen Crustose lichen Moss Herbaceous stage Shrub Woodland Climax",
+        "Moss Crustose lichen Foliose lichen Rock Herbaceous stage Shrub Woodland Climax",
+        "Rock Crustose lichen Foliose lichen Moss → Woodland Shrub Herbaceous stage Climax"
       ],
-      "answer": "Rock → Crustose lichen → Foliose lichen → Moss stage → Herbaceous → Shrub → Woodland → Climax"
+      "answer": "Rock Crustose lichen Foliose lichen → Moss Herbaceous stage Shrub Woodland → Climax"
     }
   ],
   "Week 7": [
@@ -797,12 +797,12 @@
     {
       "question": "Which of these correctly represents the process of habitat fragmentation and loss?",
       "options": [
-        "Original forest → Dissection → Perforation → Fragmentation → Attrition",
-        "Original forest → Dissection → Attrition → Fragmentation → Perforation",
-        "Original forest → Dissection → Perforation → Attrition → Fragmentation",
-        "Original forest → Dissection → Fragmentation → Perforation → Attrition"
+        "Original forest Dissection Perforation Fragmentation → Attrition",
+        "Original forest → Dissection Attrition Fragmentation→ Perforation",
+        "Original forest → Dissection Perforation Attrition Fragmentation",
+        "Original forest Dissection Fragmentation Perforation Attrition"
       ],
-      "answer": "Original forest → Dissection → Perforation → Fragmentation → Attrition"
+      "answer": "Original forest Dissection Perforation Fragmentation → Attrition"
     },
     {
       "question": "The acronym HIPPO does not include",
@@ -829,8 +829,8 @@
     {
       "question": "Which of these is not a pillar of sustainability?",
       "options": [
-        "environmental sustainability",
         "economic sustainability",
+        "environmental sustainability",
         "trans-boundary sustainability",
         "social sustainability"
       ],
@@ -839,12 +839,12 @@
     {
       "question": "The quantum of human impacts is given by",
       "options": [
-        "$I=P\\times A\\times T$",
-        "$I=P+A+T$",
-        "$I=P+A-T$",
-        "$I=P-(A+T)$"
+        "I=P\\times A\\times T",
+        "I=P+A+T",
+        "I=P+A-T",
+        "I=P-(A+T)"
       ],
-      "answer": "$I=P\\times A\\times T$"
+      "answer": "I=P\\times A\\times T"
     },
     {
       "question": "Which of these is a positive check according to Malthus?",
@@ -867,7 +867,7 @@
       "answer": "social sustainability"
     },
     {
-      "question": "____________ is used to identify which potential impacts are relevant to assess. (Fill in the blank)",
+      "question": "is used to identify which potential impacts are relevant to assess. (Fill in the blank)",
       "options": [
         "screening",
         "scoping",
@@ -877,7 +877,7 @@
       "answer": "scoping"
     },
     {
-      "question": "____________ determines which projects or developments require a full or partial impact assessment study. (Fill in the blank)",
+      "question": "determines which projects or developments require a full or partial impact assessment study. (Fill in the blank)",
       "options": [
         "screening",
         "scoping",
@@ -931,12 +931,12 @@
     {
       "question": "Macrodebris in the context of plastic debris has fragments of size",
       "options": [
-        "$>20$ mm",
-        "$5-20mm$",
-        "$<5~mm$",
+        ">20 mm",
+        "5-20 mn",
+        "<5 mm",
         "<1 mm"
       ],
-      "answer": "$>20$ mm"
+      "answer": ">20 mm"
     },
     {
       "question": "Which of these is not a climatic forcing for Earth?",
@@ -981,12 +981,12 @@
     {
       "question": "Mesodebris in the context of plastic debris has fragments of size",
       "options": [
-        "$>201$ mm",
-        "$5-20~mm$",
-        "$<5$ mm",
-        "$<1mn$"
+        ">201 mm",
+        "5-20mm",
+        "<5 mm",
+        "<1 mm"
       ],
-      "answer": "$5-20~mm$"
+      "answer": "5-20mm"
     },
     {
       "question": "The government came up with a regulation that incandescent bulbs be replaced by LED bulbs, so that electricity consumption and release of carbon dioxide from power plants is reduced. In the context of climate change, such an action would be called",
@@ -1033,12 +1033,12 @@
     {
       "question": "Which of these is correct?",
       "options": [
-        "R + G = M + F",
-        "R + M = G + F",
-        "R + F = M + G",
-        "R + G + M + F = 0"
+        "R+G=M+F",
+        "R+M=G+F",
+        "R+F=M+G",
+        "R+G+M+F=0"
       ],
-      "answer": "R + M = G + F"
+      "answer": "R+G=M+F"
     },
     {
       "question": "A deciduous forest in Madhya Pradesh was converted to a mine. After the mining operations were over, the pits were filled up with soil and species of deciduous forest planted again. This is an example of",
@@ -1180,7 +1180,7 @@
         "Fundamental niche < Realised niche",
         "a or b"
       ],
-      "answer": "Fundamental niche > Realised niche"
+      "answer": "a or b"
     },
     {
       "question": "The movement of individuals away from their place of birth or hatching or seed production into a new habitat or area to survive and reproduce is called",

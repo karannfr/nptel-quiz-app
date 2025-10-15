@@ -17,14 +17,14 @@ const Navbar = () => {
         isNavOpen &&
         <div className="fixed right-0 flex flex-col gap-4 items-end top-20 bg-[#060010] sm:hidden z-[9999] w-screen h-screen pr-6 -mt-4" onClick={() => setIsNavOpen((prev) => !prev)}>
           <RxCross1 className="sm:hidden"/> {/* Moved RxCross1 inside the click handler div */}
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/about">About</NavLink>
+          {/* <NavLink to="/">Home</NavLink> */}
+          {/* <NavLink to="/about">About</NavLink> */}
           {/* <NavLink to="/contact">Contact Us</NavLink> */}
           <a href="https://buymeacoffee.com/karan27">Buy me a coffee ☕</a>
         </div>
       }
       <div className="flex flex-row gap-4.5 dm-sans-semibold not-sm:hidden items-center">
-        <StarBorder
+          <StarBorder
             as="button"
             className="not-sm:hidden"
             color="magenta"
@@ -32,14 +32,14 @@ const Navbar = () => {
           >
             Buy me a coffee ☕
           </StarBorder>
-        <NavLink
+        {/* <NavLink
           to="/"
           className={({ isActive }) =>
             `rounded cursor-pointer pl-3 pr-3 pt-1 pb-1 ${isActive ? 'bg-[#b19eef3f] text-[#b19eef]' : 'hover:bg-[#b19eef] hover:text-black'}`
           }
         >
           Home
-        </NavLink>
+        </NavLink> */}
         {/* <NavLink
           to="/contact"
           className={({ isActive }) =>
@@ -48,14 +48,14 @@ const Navbar = () => {
         >
           Contact Us
         </NavLink> */}
-        <NavLink
+        {/* <NavLink
           to="/about"
           className={({ isActive }) =>
             `rounded cursor-pointer pl-3 pr-3 pt-1 pb-1 ${isActive ? 'bg-[#b19eef3f] text-[#b19eef]' : 'hover:bg-[#b19eef] hover:text-black'}`
           }
         >
           About
-        </NavLink>
+        </NavLink> */}
       </div>
     </nav>
   )

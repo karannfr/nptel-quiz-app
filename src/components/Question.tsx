@@ -47,7 +47,7 @@ const Question = ({ question, answer, options, mode, setIsOpen, setCount, count,
   }
   return (
     <div className="flex flex-col items-center max-w-2xl mb-16">
-      <div className="mb-4 text-lg font-semibold text-center w-auto">{question}</div>
+      <div className="mb-4 text-2xl font-semibold text-center w-auto">{question}</div>
       <div className="flex flex-wrap justify-center gap-6 max-w-2xl">
         {options.map((item, index) => {
           return (
@@ -59,6 +59,8 @@ const Question = ({ question, answer, options, mode, setIsOpen, setCount, count,
                 ${!reveal ? answered ? answered==answer ? answer==item ? 'bg-green-500' : 'bg-white' : answered == item ? 'bg-red-500' : answer==item ?  'bg-green-500' : 'bg-white' : 'bg-white' : answered ? answered==item ? ' bg-purple-400' : 'bg-white' : 'bg-white'}
                 disabled:cursor-not-allowed 
                 disabled:pointer-events-none
+                text-xl
+                font-medium
               `}
               disabled={!!answered && !mode}
             >

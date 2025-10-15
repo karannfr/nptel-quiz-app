@@ -72,11 +72,11 @@ const [message,setErrorMessage] = useState< string|null >(null);
     <>
     <BackgroundLines className="absolute"/>
     <div className="min-h-screen py-16 xl:py-10 flex flex-col gap:32 items-center">
-      <h2 className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-2xl md:text-4xl lg:text-7xl font-sans py-2 md:py-10 relative z-20 font-bold tracking-tight ">
+      <h2 className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-2xl md:text-4xl lg:text-7xl font-sans py-2 relative z-20 font-bold tracking-tight ">
           Your Personalized NPTEL  <br /> Quiz Companion
         </h2>
         <p className="max-w-xl mx-auto text-sm md:text-lg text-neutral-700 dark:text-neutral-400 text-center">
-          Upload your course PDFs or choose from our pre-loaded NPTEL courses. Practice and test yourself week-wise — in Practice Mode with instant feedback or Test Mode htmlFor real exam experience.
+          Upload your course PDFs or choose from our pre-loaded NPTEL courses. Practice and test yourself week-wise — in Practice Mode with instant feedback or Test Mode for real exam experience.
         </p>
         <div className="flex items-center justify-center w-64 sm:w-75 mt-10 cursor-pointer relative z-20">
             <label
@@ -150,7 +150,7 @@ const [message,setErrorMessage] = useState< string|null >(null);
                 <div className="flex flex-col justify-between h-full">
                   <h3>Wild Life Ecology, IIT Kanpur</h3>
                   <div>
-                    <p>Year: 2024</p>
+                    <p>Year: 2025</p>
                     <p>Prof. Mainak Das, Dr. Ankur Awadhiya</p>
                   </div>
                 </div>

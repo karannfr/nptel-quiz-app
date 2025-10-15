@@ -229,7 +229,7 @@ const Quiz = ({ file, quiz, setQuiz, isChecked, setIsChecked, setName, name, wee
           Your Personalized NPTEL  <br /> Quiz Companion
         </h2>
         <p className="max-w-xl mx-auto text-sm md:text-lg text-neutral-700 dark:text-neutral-400 text-center">
-          Upload your course PDFs or choose from our pre-loaded NPTEL courses. Practise and test yourself week-wise — in Practise Mode with instant feedback or Test Mode htmlFor real exam experience.
+          Upload your course PDFs or choose from our pre-loaded NPTEL courses. Practise and test yourself week-wise — in Practise Mode with instant feedback or Test Mode for real exam experience.
         </p>
         <p className='text-white mt-8 max-w-xl mx-auto text-center'><span className='font-bold'>Note:</span> Please verify the quiz name displayed below, should be same as Uploaded File Name/ Course Name If you notice any discrepancies, kindly return to the home page and navigate back to this page.</p>
         <p className="max-w-xl mx-auto text-xl md:text-2xl text-purple-700 text-center mt-8 font-bold">
@@ -237,7 +237,7 @@ const Quiz = ({ file, quiz, setQuiz, isChecked, setIsChecked, setName, name, wee
         </p>
         <div className='mt-8 flex justify-center gap-6 items-center'>
           <ThemeProvider theme={customTheme}>
-            <Dropdown label={week ? week === 'all' ? "All Weeks" : `Week ${week}` : "Select Week"} dismissOnClick={false} id='dropdown' >
+            <Dropdown label={week ? week === 'all' ? "All Weeks" : `Week ${week}` : "Select Week"} dismissOnClick={false} id='dropdown' className='dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 cursor-pointer' >
               {weekList.map((weekKey, index) => (
                   <DropdownItem key={index} onClick={() => handleDropdown(weekKey)}>
                     {weekKey}

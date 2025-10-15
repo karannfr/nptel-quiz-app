@@ -42,14 +42,14 @@ const Footer = () => {
         >
           <AiOutlineMail className="hover:text-[#A744F5] transition-colors" />
         </a>
-        <a
+        {/* <a
           href="https://www.instagram.com/karanxm__/"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"
         >
           <FaInstagram className="hover:text-[#A744F5] transition-colors" />
-        </a>
+        </a> */}
       </div>
     </div>
   );
