@@ -67,11 +67,12 @@ const QuizWeek = ({ isChecked, quiz, setQuiz, setName, name, weekList}: QuizWeek
       No Quiz Data Found Please Go Back to Home and Upload a File or Choose a Course
     </div>: 
     <div className="min-h-screen flex flex-col items-center mx-auto pt-16 w-max-4xl pb-16 text-white">
-      <div className='flex flex-row items-center gap-8 mb-16'>
+      <div className='flex flex-row items-center gap-8 mb-8'>
         <Link to={id === '1' ? '/quiz/all' : id === 'all' ? `/quiz/${weekList?.length}`: `/quiz/${Number(id)-1}`}><FaChevronLeft className='fill-purple-500 mt-1'/></Link>
         <div className='text-[11px] md:text-lg lg:text-2xl font-semibold text-purple-500 '>{name} - {id == 'all' ? 'All Weeks' :  `Week ${id}`}</div>
         <Link to={id === 'all' ? '/quiz/1' : id === String(weekList?.length) ? '/quiz/all' : `/quiz/${Number(id)+1}`}><FaChevronRight className='fill-purple-500 mt-1'/></Link>
       </div>
+      <Link to={'/quiz'} className='flex flex-row text-purple-500 mb-8 gap-3 items-center'>Back to Week Selection</Link>
       {questions?.map((item, index) => (
         <Question
           key={`${id}-${index}`}
