@@ -496,7 +496,7 @@
         "Physiological longevity < Ecological longevity",
         "a or b"
       ],
-      "answer": "Physiological longevity > Ecological longevity"
+      "answer": "a or b"
     },
     {
       "question": "is how close the measured values are to the correct value.",
@@ -762,7 +762,7 @@
         "very low",
         "non-existent"
       ],
-      "answer": "very low"
+      "answer": "medium"
     },
     {
       "question": "Which of these is a deterministic factor?",
