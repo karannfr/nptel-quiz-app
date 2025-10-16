@@ -839,12 +839,12 @@
     {
       "question": "The quantum of human impacts is given by",
       "options": [
-        "I=P\\times A\\times T",
+        "I=P*A*T",
         "I=P+A+T",
         "I=P+A-T",
         "I=P-(A+T)"
       ],
-      "answer": "I=P\\times A\\times T"
+      "answer": "I=P*A*T"
     },
     {
       "question": "Which of these is a positive check according to Malthus?",
